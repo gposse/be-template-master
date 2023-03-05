@@ -1,11 +1,8 @@
 # DEEL BACKEND TASK
 
-  
-
-💫 Welcome! 🎉
-
-
-This backend exercise involves building a Node.js/Express.js app that will serve a REST API. We imagine you should spend around 3 hours at implement this feature.
+This is the solution of the backend exercise implemented by Guillermo Posse
+It involves building a Node.js/Express.js app that will serve a REST API.
+I spent 3:25 hours in the implementation and unit testing.
 
 ## Data Models
 
@@ -24,37 +21,10 @@ Contracts group jobs within them.
 ### Job
 contractor get paid for jobs by clients under a certain contract.
 
-## Getting Set Up
-
-  
-The exercise requires [Node.js](https://nodejs.org/en/) to be installed. We recommend using the LTS version.
-
-  
-
-1. Start by cloning this repository.
-
-  
-
-1. In the repo root directory, run `npm install` to gather all dependencies.
-
-  
-
-1. Next, `npm run seed` will seed the local SQLite database. **Warning: This will drop the database if it exists**. The database lives in a local file `database.sqlite3`.
-
-  
-
-1. Then run `npm start` which should start both the server and the React client.
-
-  
-
-❗️ **Make sure you commit all changes to the master branch!**
-
-  
-  
+### Deposit
+A deposit model was added to keep record of all the deposits made in the system. Database migrations also created
 
 ## Technical Notes
-
-  
 
 - The server is running with [nodemon](https://nodemon.io/) which will automatically restart for you when you modify and save a file.
 
@@ -63,18 +33,11 @@ The exercise requires [Node.js](https://nodejs.org/en/) to be installed. We reco
 - To authenticate users use the `getProfile` middleware that is located under src/middleware/getProfile.js. users are authenticated by passing `profile_id` in the request header. after a user is authenticated his profile will be available under `req.profile`. make sure only users that are on the contract can access their contracts.
 - The server is running on port 3001.
 
-  
+## APIs Implemented
 
-## APIs To Implement 
+Below is a list of the application's API's.
 
-  
-
-Below is a list of the required API's for the application.
-
-  
-
-
-1. ***GET*** `/contracts/:id` - This API is broken 😵! it should return the contract only if it belongs to the profile calling. better fix that!
+1. ***GET*** `/contracts/:id` - Returns contract only if associated to the current user
 
 1. ***GET*** `/contracts` - Returns a list of contracts belonging to a user (client or contractor), the list should only contain non terminated contracts.
 
@@ -106,21 +69,11 @@ Below is a list of the required API's for the application.
     }
 ]
 ```
-
-  
+ 
 
 ## Going Above and Beyond the Requirements
 
-Given the time expectations of this exercise, we don't expect anyone to submit anything super fancy, but if you find yourself with extra time, any extra credit item(s) that showcase your unique strengths would be awesome! 🙌
-
-It would be great for example if you'd write some unit test / simple frontend demostrating calls to your fresh APIs.
-
+I provide a Postman collection to test all transactions of the API
   
 
-## Submitting the Assignment
-
-When you have finished the assignment, create a github repository and send us the link.
-
-  
-
-Thank you and good luck! 🙏
+## Thank you. It was my pleasure working this excercise

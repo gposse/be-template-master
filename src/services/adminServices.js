@@ -38,12 +38,20 @@ const findBestClients = async (app,startDate, endDate, limit) => {
 			order: [[sequelize.literal('totalPrice'), 'DESC']],
 			limit: limit
 		});
-		return clientList;
+		let newList = [];
+		clientList.forEach(c=>{
+			newList.push({
+				id: c.Contract.Client.id,
+//				fullName: c.Contract.Client.get("fullName"), Didn't work
+				fullName: c.Contract.Client.firstName+" "+c.Contract.Client.lastName,
+				paid: c.get("totalPrice")
+			});
+		})
+		return newList;
 	} catch (err) {
-    console.log(err);
-    throw new Error("Failed to find best clients");
+		console.log(err);
+		throw new Error("Failed to find best clients");
 	}
-
 };
 
 const findBestProfession = async (app,startDate, endDate) => {

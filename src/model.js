@@ -5,7 +5,11 @@ const sequelize = new Sequelize({
   storage: './database.sqlite3'
 });
 
-class Profile extends Sequelize.Model {}
+class Profile extends Sequelize.Model {
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
 Profile.init(
   {
     firstName: {
