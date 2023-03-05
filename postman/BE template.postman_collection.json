@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "8b87eb02-c941-4e13-a651-303b58faab1d",
+		"name": "BE template",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2389860"
+	},
+	"item": [
+		{
+			"name": "Get contract by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/contracts/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"contracts",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get job  by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/jobs/get/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"jobs",
+						"get",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/jobs/4/pay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"jobs",
+						"4",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"amount\": 100 }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/balances/deposit/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"balances",
+						"deposit",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all contracts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/contracts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"contracts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find best profession",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/admin/best-profession?start=2023-01-01&end=2023-03-5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"admin",
+						"best-profession"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2023-01-01"
+						},
+						{
+							"key": "end",
+							"value": "2023-03-5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find best clients",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/admin/best-clients?start=2023-01-01&end=2023-03-5&limit=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"admin",
+						"best-clients"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2023-01-01"
+						},
+						{
+							"key": "end",
+							"value": "2023-03-5"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all unpaid jobs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/jobs/unpaid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"jobs",
+						"unpaid"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

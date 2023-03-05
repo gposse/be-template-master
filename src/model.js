@@ -75,12 +75,33 @@ Job.init(
   }
 );
 
+/* Deposit class is created to keep record of all deposits posted for a client */
+class Deposit extends Sequelize.Model {}
+Deposit.init(
+  {
+    amount:{
+      type: Sequelize.DECIMAL(12,2),
+      allowNull: false
+    },
+    depositDate:{
+      type: Sequelize.DATE
+    }
+  },
+  {
+    sequelize,
+    modelName: 'Deposit'
+  }
+);
+
 Profile.hasMany(Contract, {as :'Contractor',foreignKey:'ContractorId'})
 Contract.belongsTo(Profile, {as: 'Contractor'})
 Profile.hasMany(Contract, {as : 'Client', foreignKey:'ClientId'})
 Contract.belongsTo(Profile, {as: 'Client'})
 Contract.hasMany(Job)
 Job.belongsTo(Contract)
+
+Profile.hasMany(Deposit)
+Deposit.belongsTo(Profile)
 
 module.exports = {
   sequelize,
